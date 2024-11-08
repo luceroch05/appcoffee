@@ -30,15 +30,15 @@ flutter:
 
   # Sección de assets, con la sangría corregida
   assets:
-    - assets/logito.png
-    - assets/capuccino.png
-    - assets/expreso.png
-    - assets/frappe.png
-    - assets/tarta.png
-    - assets/expresoleche.png
-    - assets/latteclasico.png
-    - assets/lattecaramelo.png
-    - assets/lattevainilla.png
+    - assets/
+    # - assets/capuccino.png
+    # - assets/expreso.png
+    # - assets/frappe.png
+    # - assets/tarta.png
+    # - assets/expresoleche.png
+    # - assets/latteclasico.png
+    # - assets/lattecaramelo.png
+    # - assets/lattevainilla.png
 
   
 

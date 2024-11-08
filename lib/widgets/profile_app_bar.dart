@@ -10,7 +10,7 @@ class ProfileAppBar extends StatelessWidget {
       elevation: 4,
       title: Center(
         child: Image.asset(
-          'assets/logito.png',
+          'assets/logo.png',
           height: 40,
         ),
       ),
