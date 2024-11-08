@@ -1,0 +1,44 @@
+name: appcoffee
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  google_fonts: ^3.0.1
+
+  # Linting for good coding practices
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Sección de assets, con la sangría corregida
+  assets:
+    - assets/logito.png
+    - assets/capuccino.png
+    - assets/expreso.png
+    - assets/frappe.png
+    - assets/tarta.png
+    - assets/expresoleche.png
+    - assets/latteclasico.png
+    - assets/lattecaramelo.png
+    - assets/lattevainilla.png
+
+  
+
