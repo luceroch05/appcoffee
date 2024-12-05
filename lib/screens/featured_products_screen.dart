@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
-import 'coffee_expresso_category.dart'; // Importa la pantalla de la categoría Café Expreso
+ // Pantalla de categoría (si aplica)
+import 'products/destacados1.dart'; // Detalles del Capuccino
 
 class FeaturedProductsScreen extends StatelessWidget {
-  // Lista de productos con detalles como nombre, precio e imagen
-  final List<Map<String, String>> products = [
+  // Lista de productos con detalles como nombre, precio, imagen y página de destino
+  final List<Map<String, dynamic>> products = [
     {
       'name': 'Café Expreso Clásico',
       'price': 'S/ 8.00',
-      'image': 'assets/expreso.png', // Imagen del producto
+      'image': 'assets/expreso.png',
+      'detailsPage': CoffeeExpressoDetails(),
     },
     {
       'name': 'Capuccino Cremoso',
       'price': 'S/ 10.00',
       'image': 'assets/capuccino.png',
+      'detailsPage': CapuccinoDetails(),
     },
     {
       'name': 'Frappé de Vainilla',
       'price': 'S/ 12.00',
       'image': 'assets/frappe.png',
+      'detailsPage': FrappeDetails(), // No hay página estática, agrega si la tienes
     },
     {
       'name': 'Tarta de Limón y Merengue',
       'price': 'S/ 15.00',
       'image': 'assets/tarta.png',
+      'detailsPage': TartaDetails(), // No hay página estática, agrega si la tienes
     },
   ];
 
@@ -35,23 +40,25 @@ class FeaturedProductsScreen extends StatelessWidget {
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // Dos productos por fila
-          crossAxisSpacing: 10.0, // Espaciado horizontal
-          mainAxisSpacing: 10.0, // Espaciado vertical
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
         ),
-        itemCount: products.length, // Número de productos
+        itemCount: products.length,
         itemBuilder: (context, index) {
-          final product = products[index]; // Accede al producto en el índice
+          final product = products[index];
 
           return GestureDetector(
             onTap: () {
-              // Verifica si el producto es de la categoría Café Expreso
-              if (product['name'] == 'Café Expreso Clásico') {
-                // Navegar a la pantalla de Café Expreso
+              if (product['detailsPage'] != null) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CoffeeExpressoCategory(),
+                    builder: (context) => product['detailsPage'],
                   ),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Página no disponible')),
                 );
               }
             },
